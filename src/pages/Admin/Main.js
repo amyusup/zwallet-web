@@ -12,7 +12,7 @@ function Main() {
 
   const { token } = useSelector(state => state.Auth)
   const { userdata, history, error } = useSelector(state => state.User)
-  const { balance, phone, email } = userdata
+  const { balance, phone } = userdata
 
   const dispatch = useDispatch()
   useEffect(() => {
