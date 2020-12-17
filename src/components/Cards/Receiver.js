@@ -10,7 +10,7 @@ function ReceiverCard(props) {
       <div className="d-flex align-items-center">
         <img
           className="rounded-14 object-cover"
-          src={src ? src : "/assets/images/icons/default.svg"}
+          src={src ? url(src) : "/assets/images/icons/default.svg"}
           height="56px"
           width="56px"
           alt="images"
