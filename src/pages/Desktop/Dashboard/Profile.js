@@ -1,11 +1,12 @@
 import React from 'react'
 import { Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Icons from '../../../components/Icons'
 import { useSelector, useDispatch } from 'react-redux'
-import { setPhoto } from '../../../redux/actions/user'
+import { setPhoto, UserLoad } from '../../../redux/actions/user'
 
 function Profile() {
+  const history = useHistory()
   const { token } = useSelector(state => state.Auth)
   const { userdata } = useSelector(state => state.User)
   const dispatch = useDispatch()
@@ -14,7 +15,12 @@ function Profile() {
     const formData = new FormData()
     formData.append("photo", e.target.files[0])
     dispatch(setPhoto(token, formData))
+    dispatch(UserLoad(token, history, false))
+    
   }
+  React.useEffect(()=>{
+    // 
+  }, [_setPhoto])
 
   return (
     <>

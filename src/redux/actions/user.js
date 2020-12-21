@@ -100,7 +100,8 @@ export const setPhoto = (token, data) => (dispatch) => {
       Authorization: `Bearer ${token}`,
     },
   })
-    .then((res) => dispatch(options(SETPHOTO, res.data.data.photo)))
+  
+    .then((res) => dispatch(options(SETPHOTO, res.data.data) ))
     .catch((err) => handleError(err, dispatch));
 };
 
